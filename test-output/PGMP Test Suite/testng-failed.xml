@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" guice-stage="DEVELOPMENT" verbose="10" name="Failed suite [PGMP Test Suite]">
+  <test name="Selenium Test Suite(failed)">
+    <classes>
+      <class name="SeleniumTests.SeleniumTests.HomePageTest">
+        <methods>
+          <include name="ClickPackagesTest"/>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="ClickFlightTest"/>
+          <include name="HomeClickTest"/>
+          <include name="ClickHotelTest"/>
+        </methods>
+      </class> <!-- SeleniumTests.SeleniumTests.HomePageTest -->
+    </classes>
+  </test> <!-- Selenium Test Suite(failed) -->
+</suite> <!-- Failed suite [PGMP Test Suite] -->
