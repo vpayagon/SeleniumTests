@@ -3,6 +3,8 @@ package SeleniumTests.SeleniumTests;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.pgmp.base.TestBase;
 
@@ -39,19 +41,27 @@ public class HomePage  extends TestBase{
 	}
 	public boolean clickHome() {
 		lnkHome.click();
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait.until(ExpectedConditions.visibilityOf(elemHome));
 		return elemHome.isDisplayed();
 		
 	}
 	public boolean clickFlight() {
 		lnkFlight.click();
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait.until(ExpectedConditions.visibilityOf(elemFlight));
 		return elemFlight.isDisplayed();
 	}
 	public boolean clickHotel() {
 		lnkHotel.click();
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait.until(ExpectedConditions.visibilityOf(elemHotel));
 		return elemHotel.isDisplayed();
 	}
 	public boolean clickPackages() {
 		lnkPackages.click();
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait.until(ExpectedConditions.visibilityOf(elemPackages));
 		return elemPackages.isDisplayed();
 	}
 	
