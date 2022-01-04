@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import java.util.concurrent.TimeUnit;
 
 import com.pgmp.base.TestBase;
 
@@ -41,15 +42,13 @@ public class HomePage  extends TestBase{
 	}
 	public boolean clickHome() {
 		lnkHome.click();
-		WebDriverWait wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.visibilityOf(elemHome));
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		return elemHome.isDisplayed();
 		
 	}
 	public boolean clickFlight() {
 		lnkFlight.click();
-		WebDriverWait wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.visibilityOf(elemFlight));
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		return elemFlight.isDisplayed();
 	}
 	public boolean clickHotel() {
