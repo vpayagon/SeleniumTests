@@ -44,7 +44,7 @@ public class HomePage  extends TestBase{
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOf(lnkHome));
 		lnkHome.click();
-		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOf(elemHome));
 		return elemHome.isDisplayed();
 		
@@ -59,7 +59,7 @@ public class HomePage  extends TestBase{
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOf(lnkHotel));
 		lnkHotel.click();
-		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOf(elemHotel));
 		return elemHotel.isDisplayed();
 	}
@@ -67,7 +67,7 @@ public class HomePage  extends TestBase{
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOf(lnkPackages));
 		lnkPackages.click();
-		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOf(elemPackages));
 		return elemPackages.isDisplayed();
 	}
