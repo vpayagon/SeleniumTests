@@ -40,15 +40,17 @@ public class HomePage  extends TestBase{
 		// TODO Auto-generated constructor stub
 		PageFactory.initElements(driver, this);
 	}
-	public boolean clickHome() {
+	public boolean clickHome() throws InterruptedException {
+		Thread.sleep(2000);
 		lnkHome.click();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		return elemHome.isDisplayed();
 		
 	}
-	public boolean clickFlight() {
+	public boolean clickFlight() throws InterruptedException {
+		Thread.sleep(2000);
 		lnkFlight.click();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		return elemFlight.isDisplayed();
 	}
 	public boolean clickHotel() {
