@@ -41,10 +41,10 @@ public class HomePage  extends TestBase{
 		PageFactory.initElements(driver, this);
 	}
 	public boolean clickHome() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver,30);
+		WebDriverWait wait = new WebDriverWait(driver,60);
 		wait.until(ExpectedConditions.visibilityOf(lnkHome));
 		lnkHome.click();
-		wait = new WebDriverWait(driver,30);
+		wait = new WebDriverWait(driver,60);
 		wait.until(ExpectedConditions.visibilityOf(elemHome));
 		return elemHome.isDisplayed();
 		
@@ -56,18 +56,18 @@ public class HomePage  extends TestBase{
 		return elemFlight.isDisplayed();
 	}
 	public boolean clickHotel() {
-		WebDriverWait wait = new WebDriverWait(driver,30);
+		WebDriverWait wait = new WebDriverWait(driver,60);
 		wait.until(ExpectedConditions.visibilityOf(lnkHotel));
 		lnkHotel.click();
-		wait = new WebDriverWait(driver,30);
+		wait = new WebDriverWait(driver,60);
 		wait.until(ExpectedConditions.visibilityOf(elemHotel));
 		return elemHotel.isDisplayed();
 	}
 	public boolean clickPackages() {
-		WebDriverWait wait = new WebDriverWait(driver,30);
+		WebDriverWait wait = new WebDriverWait(driver,60);
 		wait.until(ExpectedConditions.visibilityOf(lnkPackages));
 		lnkPackages.click();
-		wait = new WebDriverWait(driver,30);
+		wait = new WebDriverWait(driver,60);
 		wait.until(ExpectedConditions.visibilityOf(elemPackages));
 		return elemPackages.isDisplayed();
 	}
