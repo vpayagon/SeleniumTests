@@ -55,35 +55,21 @@ public class HomePage  extends TestBase{
 		return true;
 	}
 	
-	public boolean clickHome() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.visibilityOf(lnkHome));
+	public boolean clickHome()  {
 		lnkHome.click();
-		wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.visibilityOf(elemHome));
 		return elemHome.isDisplayed();
 		
 	}
-	public boolean clickFlight() throws InterruptedException {
-		Thread.sleep(2000);
+	public boolean clickFlight()  {
 		lnkFlight.click();
-		Thread.sleep(2000);
 		return elemFlight.isDisplayed();
 	}
 	public boolean clickHotel() {
-		WebDriverWait wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.visibilityOf(lnkHotel));
 		lnkHotel.click();
-		wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.visibilityOf(elemHotel));
 		return elemHotel.isDisplayed();
 	}
 	public boolean clickPackages() {
-		WebDriverWait wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.visibilityOf(lnkPackages));
 		lnkPackages.click();
-		wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.visibilityOf(elemPackages));
 		return elemPackages.isDisplayed();
 	}
 	
