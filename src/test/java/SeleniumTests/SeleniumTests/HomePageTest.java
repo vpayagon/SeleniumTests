@@ -28,20 +28,24 @@ public class HomePageTest extends TestBase {
 	public void OpenAppTest() throws InterruptedException {
 		homepage=openapp.navigateApp();
 	}
-	
 	@Test(priority = 2)
+	public void FetchHeaders() throws InterruptedException {
+		Assert.assertTrue(homepage.displayoptions());
+	}
+	
+	@Test(priority = 3)
 	public void HomeClickTest() throws InterruptedException {
 		Assert.assertTrue(homepage.clickHome());
 	}
-	@Test(priority = 3)
+	@Test(priority = 4)
 	public void ClickFlightTest() throws InterruptedException {
 		Assert.assertTrue(homepage.clickFlight());
 	}
-	@Test(priority = 4)
+	@Test(priority = 5)
 	public void ClickHotelTest() throws InterruptedException {
 		Assert.assertTrue(homepage.clickHotel());
 	}
-	@Test(priority = 5)
+	@Test(priority = 6)
 	public void ClickPackagesTest() throws InterruptedException {
 		Assert.assertTrue(homepage.clickPackages());
 	}
