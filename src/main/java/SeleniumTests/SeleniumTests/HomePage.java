@@ -1,15 +1,13 @@
 package SeleniumTests.SeleniumTests;
 
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import com.pgmp.base.TestBase;
 
@@ -57,10 +55,9 @@ public class HomePage  extends TestBase{
 	}
 	
 	public boolean clickHome()  {
-		WebDriverWait wait = new WebDriverWait(driver, 20);
-		WebElement element = wait.until(
-		ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"navbarText\"]/ul[1]/li[1]/a")));
-		element.click();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", lnkHome);
 		return elemHome.isDisplayed();
 		
 	}
@@ -72,19 +69,17 @@ public class HomePage  extends TestBase{
 		return elemFlight.isDisplayed();
 	}
 	public boolean clickHotel() {
-		WebDriverWait wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.visibilityOf(lnkHotel));
-		lnkHotel.click();
-		wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.visibilityOf(elemHotel));
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", lnkHotel);
+		//lnkHotel.click();
 		return elemHotel.isDisplayed();
 	}
 	public boolean clickPackages() {
-		WebDriverWait wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.visibilityOf(lnkPackages));
-		lnkPackages.click();
-		wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.visibilityOf(elemPackages));
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", lnkPackages);
+		//lnkPackages.click();
 		return elemPackages.isDisplayed();
 	}
 	
