@@ -1,16 +1,21 @@
 package SeleniumTests.SeleniumTests;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import com.pgmp.base.TestBase;
 
 public class HomePage  extends TestBase{
 	
+	@FindBy(id = "navbarText")
+	WebElement lstheaders;
 	
 	@FindBy(xpath = "//*[@id=\"navbarText\"]/ul[1]/li[1]/a")
 	WebElement lnkHome;
@@ -40,11 +45,21 @@ public class HomePage  extends TestBase{
 		// TODO Auto-generated constructor stub
 		PageFactory.initElements(driver, this);
 	}
+	public boolean displayoptions() {
+		List<WebElement> liitems=lstheaders.findElements(By.tagName("li"));
+		for(WebElement elem:liitems) {
+			String s=elem.findElement(By.tagName("a")).getAttribute("text");
+			System.out.println(s);
+			
+		}
+		return true;
+	}
+	
 	public boolean clickHome() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver,60);
+		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOf(lnkHome));
 		lnkHome.click();
-		wait = new WebDriverWait(driver,60);
+		wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOf(elemHome));
 		return elemHome.isDisplayed();
 		
@@ -56,18 +71,18 @@ public class HomePage  extends TestBase{
 		return elemFlight.isDisplayed();
 	}
 	public boolean clickHotel() {
-		WebDriverWait wait = new WebDriverWait(driver,60);
+		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOf(lnkHotel));
 		lnkHotel.click();
-		wait = new WebDriverWait(driver,60);
+		wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOf(elemHotel));
 		return elemHotel.isDisplayed();
 	}
 	public boolean clickPackages() {
-		WebDriverWait wait = new WebDriverWait(driver,60);
+		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOf(lnkPackages));
 		lnkPackages.click();
-		wait = new WebDriverWait(driver,60);
+		wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOf(elemPackages));
 		return elemPackages.isDisplayed();
 	}
