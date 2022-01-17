@@ -18,6 +18,9 @@ public class HomePage  extends TestBase{
 	
 	@FindBy(xpath = "//*[@id=\"navbarText\"]/ul[1]/li[1]/a")
 	WebElement lnkHome;
+
+	@FindBy(xpath = "//*[@id=\"menu-main-navigation-1\"]/li[1]/a")
+	WebElement lnkHome1;	
 	
 	@FindBy(xpath = "/html/body/div[1]/div[3]/div/div[1]/div[1]/div/h5")
 	WebElement elemHome;
@@ -39,6 +42,25 @@ public class HomePage  extends TestBase{
 	
 	@FindBy(xpath = "//*[@id=\"traveltour-page-wrapper\"]/div/div[1]/div[2]/div/div/div/div/form/div/label")
 	WebElement elemPackages;
+	
+	
+	@FindBy(xpath = "//*[@id=\"navbarDropdown\"]")
+	WebElement elemMyAcc;
+	
+	@FindBy(xpath = "//*[@id=\"navbarText\"]/ul[2]/li/div/a[1]")
+	WebElement elemMyBook;
+	
+	@FindBy(name = "booking-id")
+	WebElement elembookId;
+	
+	@FindBy(name = "email")
+	WebElement elemEmail;
+	
+	@FindBy(xpath = "/html/body/div[1]/div[2]/div/div/div/div/form/div[1]/ul/li")
+	WebElement elemMsg;
+	
+	@FindBy(name = "submit")
+	WebElement elemSubmit;
 	
 	public HomePage() {
 		// TODO Auto-generated constructor stub
@@ -83,4 +105,36 @@ public class HomePage  extends TestBase{
 		return elemPackages.isDisplayed();
 	}
 	
+	public boolean clickMyAcc() {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", lnkHome1);
+		//lnkHome.click();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", elemMyAcc);
+		//lnkPackages.click();
+		return true;
+	}
+	
+	public boolean clickMybookings() {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", elemMyBook);
+		//lnkPackages.click();
+		return true;
+	}
+	public boolean writefields() {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		elembookId.sendKeys("Test");
+		elemEmail.sendKeys("Test");
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", elemSubmit);
+		return true;
+	}
+	public boolean verifyMessage() {
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		return elemMsg.isDisplayed();
+		//lnkPackages.click();		
+	}
 }
