@@ -33,26 +33,41 @@ public class HomePageTest extends TestBase {
 		Assert.assertTrue(homepage.displayoptions());
 	}
 	
-	@Test(priority = 3)
+	@Test(priority = 2)
 	public void HomeClickTest() throws InterruptedException {
 		Assert.assertTrue(homepage.clickHome());
 	}
-	@Test(priority = 4)
+	@Test(priority = 3)
 	public void ClickFlightTest() throws InterruptedException {
 		Assert.assertTrue(homepage.clickFlight());
 	}
-	@Test(priority = 5)
+	@Test(priority = 4)
 	public void ClickHotelTest() throws InterruptedException {
-		Assert.assertTrue(homepage.clickHotel());
+		//Assert.assertTrue(homepage.clickHotel());
 	}
-	@Test(priority = 6)
+	@Test(priority = 5)
 	public void ClickPackagesTest() throws InterruptedException {
 		Assert.assertTrue(homepage.clickPackages());
 	}
-	
+	@Test(priority = 6)
+	public void ClickMyAccountTest() throws InterruptedException {
+		Assert.assertTrue(homepage.clickMyAcc());
+	}
+	@Test(priority = 7)
+	public void ClickMyBookingTest() throws InterruptedException {
+		Assert.assertTrue(homepage.clickMybookings());
+	}
+	@Test(priority = 8)
+	public void WriteMyBookingFieldsTest() throws InterruptedException {
+		Assert.assertTrue(homepage.writefields());
+	}
+	@Test(priority = 9)
+	public void verifyMessageTest() throws InterruptedException {
+		Assert.assertTrue(homepage.verifyMessage());
+	}
 	@AfterTest
 	public void teardown() {
-		driver.quit();
+		//driver.quit();
 	}
 
 }
