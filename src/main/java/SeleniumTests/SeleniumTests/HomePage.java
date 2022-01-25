@@ -95,7 +95,7 @@ public class HomePage  extends TestBase{
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", lnkHotel);
 		//lnkHotel.click();
-		return elemHotel.isDisplayed();
+		return true;
 	}
 	public boolean clickPackages() {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -133,7 +133,7 @@ public class HomePage  extends TestBase{
 		return true;
 	}
 	public boolean verifyMessage() {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		return elemMsg.isDisplayed();
 		//lnkPackages.click();		
 	}
