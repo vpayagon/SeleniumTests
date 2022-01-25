@@ -43,7 +43,7 @@ public class HomePageTest extends TestBase {
 	}
 	@Test(priority = 4)
 	public void ClickHotelTest() throws InterruptedException {
-		//Assert.assertTrue(homepage.clickHotel());
+		Assert.assertTrue(homepage.clickHotel());
 	}
 	@Test(priority = 5)
 	public void ClickPackagesTest() throws InterruptedException {
@@ -67,7 +67,7 @@ public class HomePageTest extends TestBase {
 	}
 	@AfterTest
 	public void teardown() {
-		//driver.quit();
+		driver.quit();
 	}
 
 }
